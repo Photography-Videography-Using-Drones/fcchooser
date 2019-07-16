@@ -13,6 +13,8 @@ Supported AC:
 
 Credits to all the OG's, Matioupi, mefistotelis, fvantienen, jcase, jezzab, jan and anyone else involved with making the toolset or associated tools. Here's to the community
 
+Donations are welcomed via paypal to flyflydrones@gmail.com
+
 Detail:
 
 The tool will help you flash firmware to remove limits on newer DJI aircraft. It does this by connecting to the drone via adb, starts a process and then we flash the aircraft with a custom/modified firmware file. The tool will detect if you already have a file, if not it will allow you to pick your aircraft and then flash it youself. It helps automate and step through the process easily.
