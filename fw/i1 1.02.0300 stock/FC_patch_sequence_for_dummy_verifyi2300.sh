@@ -132,7 +132,7 @@ cp $ORI_FILENAME $TMP_FILENAME1
 echo "################################################################################"
 echo "                       Updating flight parameters"
 echo "################################################################################"
-# run the dam tool from the same folder as the firware files, simplier
+# changed to run the tool from the same folder as the firware files
 # added python before to use python 3 from path
 python dji_flyc_param_ed.py -vv -u -b 0x420000 -m $TMP_FILENAME1
 
@@ -149,18 +149,21 @@ echo "               Patching flight parameters hardcoded values"
 echo "               Adding U-Blox custom configuration"
 echo "################################################################################"
 
+#commenting out to test I2
 # call it using python version 2
 # run from the same folder, need to copy python2 exe into folder on my pc
-python2 "patch_"$AC_PREFIX"_"$MODULE"_I2300.py $TMP_FILENAME1 $VERSION
-if [ $? != 0 ]
-then
-    echo "#### Issue while patching module ####"
-    exit 1
-else
-    echo "#### Success patching module ####"
-fi
+# python2 "patch_"$AC_PREFIX"_"$MODULE"_I2300.py $TMP_FILENAME1 $VERSION
+# if [ $? != 0 ]
+# then
+#     echo "#### Issue while patching module ####"
+#     exit 1
+# else
+#     echo "#### Success patching module ####"
+# fi
 
-mv $TMP_FILENAME1.patched "$DST_FILENAME"
+#mv $TMP_FILENAME1.patched "$DST_FILENAME"
+mv $TMP_FILENAME1 "$DST_FILENAME"
+
 
 echo "################################################################################"
 echo "                       Modifying $AC_PREFIX.cfg"
